@@ -12,7 +12,6 @@ class ProductsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // navigationItem.leftBarButtonItem = editButtonItem
         tableView.rowHeight = 160
     }
 
@@ -47,19 +46,7 @@ class ProductsTableViewController: UITableViewController {
         let device = deviceList[indexPath.row]
         performSegue(withIdentifier: "showDetails", sender: device)
     }
-    
-     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        .none
-    }
-    
-     override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-        false
-    }
-    
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let device = deviceList.remove(at: sourceIndexPath.row)
-        deviceList.insert(device, at: destinationIndexPath.row)
-    }
+
 }
 
 
